@@ -1,0 +1,9 @@
+---
+- name: roll back the ansistrano 
+  hosts: all
+  sudo: yes
+  vars:
+    ansistrano_deploy_to: /home/vagrant/demo
+  roles:
+    - { role: ansistrano.rollback }
+ 

@@ -1,0 +1,9 @@
+---
+# tasks file for run_python
+- name: run python program
+  command: python gradien_regression.py
+  args:
+    chdir: /home/vagrant/demo/repo  
+  register: output
+- debug:
+    var: output  

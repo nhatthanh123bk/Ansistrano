@@ -1,0 +1,21 @@
+---
+- hosts: all
+ 
+  vars:
+    ansistrano_deploy_to: "/home/vagrant/demo" # server side path you want to deploy too
+    ansistrano_keep_releases: 3
+ 
+    ansistrano_deploy_via: "git"
+ 
+    ansistrano_git_repo: "https://github.com/nhatthanh123bk/gradient_descent"
+    ansistrano_git_branch: "master"
+ 
+ 
+  roles:
+    - { role: ansistrano.deploy }
+
+- hosts: slave
+  sudo: yes
+  roles:
+    - run_python
+    - remove_repo

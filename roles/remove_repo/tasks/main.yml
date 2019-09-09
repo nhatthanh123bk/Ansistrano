@@ -1,0 +1,6 @@
+---
+# tasks file for remove_repo
+- name: remove repo
+  file:
+    path: /home/vagrant/demo/repo
+    state: absent
